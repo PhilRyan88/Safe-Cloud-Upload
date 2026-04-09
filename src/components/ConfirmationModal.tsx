@@ -37,19 +37,19 @@ const ConfirmationModal = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in duration-200">
       <div
         ref={modalRef}
-        className="bg-white dark:bg-slate-800 rounded-xl shadow-2xl max-w-md w-full p-6 transform transition-all scale-100 animate-in zoom-in-95"
+        className="bg-slate-900 border border-white/10 rounded-2xl shadow-2xl shadow-black/50 max-w-md w-full p-6 transform transition-all scale-100 animate-in zoom-in-95"
       >
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+        <h3 className="text-xl font-bold text-white mb-2">
           {title}
         </h3>
-        <p className="text-gray-500 dark:text-gray-400 mb-6">{message}</p>
+        <p className="text-slate-400 mb-6">{message}</p>
         <div className="flex justify-end space-x-3">
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors bg-base"
+            className="px-4 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition-colors border border-transparent hover:border-white/10"
           >
             {cancelLabel}
           </button>
@@ -58,7 +58,7 @@ const ConfirmationModal = ({
               onConfirm();
               onClose();
             }}
-            className="px-4 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white shadow-lg shadow-red-500/30 transition-all transform hover:-translate-y-0.5"
+            className="px-4 py-2 rounded-xl bg-red-500/20 hover:bg-red-500/40 text-red-400 hover:text-red-300 border border-red-500/30 hover:border-red-500/50 shadow-lg shadow-red-500/10 transition-all transform hover:-translate-y-0.5"
           >
             {confirmLabel}
           </button>

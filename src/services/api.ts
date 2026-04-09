@@ -31,6 +31,10 @@ export const registerUser = (data: AuthPayload) =>
 export const loginUser = (data: AuthPayload) =>
   API.post("/auth/login", data);
 
+export const setup2FA = () => API.post("/auth/setup-2fa");
+export const verifySetup2FA = (token: string) => API.post("/auth/verify-setup-2fa", { token });
+export const verifyLogin2FA = (data: { userId: string, token: string, deviceHash: string, deviceName?: string }) => API.post("/auth/verify-login-2fa", data);
+
 
 export const getDevices = () =>
   API.get("/auth/devices");

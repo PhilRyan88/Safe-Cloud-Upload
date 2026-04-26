@@ -29,26 +29,29 @@ const Upload = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-[#0B0F19] text-white">
+       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay pointer-events-none"></div>
       <form
         onSubmit={handleUpload}
-        className="bg-white p-6 rounded shadow w-96"
+        className="relative z-10 bg-[#111622] p-8 rounded-2xl border border-white/[0.08] shadow-[0_8px_32px_rgba(0,0,0,0.4)] w-full max-w-md mx-4 animate-in fade-in zoom-in-95 duration-500"
       >
-        <h2 className="text-xl font-bold mb-4 text-center">
+        <h2 className="text-2xl font-semibold mb-6 text-center tracking-tight">
           Secure File Upload
         </h2>
 
-        <input
-          type="file"
-          className="mb-4 bg-black"
-          onChange={(e) =>
-            setFile(e.target.files ? e.target.files[0] : null)
-          }
-        />
+        <div className="mb-6">
+            <input
+              type="file"
+              className="w-full text-sm text-[#A1A1A9] file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border file:border-white/10 file:bg-white/5 file:text-white file:font-medium hover:file:bg-white/10 cursor-pointer transition-all"
+              onChange={(e) =>
+                setFile(e.target.files ? e.target.files[0] : null)
+              }
+            />
+        </div>
 
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white p-2 rounded"
+          className="w-full bg-blue-600 hover:bg-blue-500 text-white font-medium py-3 px-4 rounded-xl shadow-[0_0_15px_rgba(37,99,235,0.2)] transition-all duration-200 border border-blue-500/50"
         >
           Encrypt & Upload
         </button>
